@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const mongoose = require("mongoose");
+//const mongoose = require("mongoose");
 const port = process.env.PORT || 3001;
 const path = require("path");
 
@@ -10,11 +10,12 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+/**
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("Database is connected..."))
-  .catch((err) => console.log(err));
-
+  .catch((err) => console.log(err));*/
+/**
 //db schema
 const userSchema = mongoose.Schema({
   name: String,
@@ -41,7 +42,7 @@ app.post("/create", (req, res) => {
     .save()
     .then((user) => res.json(user))
     .catch((err) => console.log(err));
-});
+});*/
 
 app.use(express.static("./client/build"));
 app.get("*", (req, res) => {
